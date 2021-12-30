@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rupiah to Mata Uang Asing</title>
+
+    <style>
+        #hasil {
+            width: 250px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <fieldset style="width: 30%; margin: auto;">
+        <legend>Kurs Rupiah - Mata Uang Asing</legend>
+        <table style="border: 2px solid blue">
+            <tr>
+                <td>Masukkan Nilai</td>
+                <td>Valas</td>
+                <td>Nilai Rupiah</td>
+            </tr>
+            <tr>
+                <td><input type="text" id="input"></td>
+
+                <td>
+                    <select id="kurs" onchange="perhitungan()">
+                        <option value="USD">Dollar US</option>
+                        <option value="SGD">Dollar Singapore</option>
+                        <option value="MYR">Ringgit Malaysia</option>
+                        <option value="JPY">Yen Japan</option>
+                        <option value="EUR">Euro</option>
+                        <option value="SAR">Riyal Saudi Arabia</option>
+                    </select>
+                </td>
+
+                <td><div id="hasil"></div></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <script>
+        const inputNominal = document.getElementById("input");
+        const kursPilihan = document.getElementById("kurs");
+        const hasilAkhir = document.getElementById("hasil");
+
+        function perhitungan() {
+            if (kursPilihan.value == "USD") {
+                hasilAkhir.innerHTML = inputNominal.value * 9915 + " Rupiah";
+            }
+
+            else if (kursPilihan.value == "SGD") {
+                hasilAkhir.innerHTML = inputNominal.value * 13472 + " Rupiah";
+            }
+
+            else if (kursPilihan.value == "MYR") {
+                hasilAkhir.innerHTML = inputNominal.value * 874 + " Rupiah";
+            }
+
+            else if (kursPilihan.value == "JPY") {
+                hasilAkhir.innerHTML = inputNominal.value * 120 + " Rupiah";
+            }
+
+            else if (kursPilihan.value == "EUR") {
+                hasilAkhir.innerHTML = inputNominal.value * 15888 + " Rupiah";
+            }
+
+            else{
+                hasilAkhir.innerHTML = inputNominal.value * 3592 + " Rupiah";
+            }
+        }     
+    </script>
+</body>
+</html>

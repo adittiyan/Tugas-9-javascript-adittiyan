@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="picker.css">
+    <title>Pilih Gambar</title>
+
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <div class="container-image">
+            <h1>Image Picker</h1>
+            <div class="select-img">
+                <select name="select_img" id="select_img" onchange="gantiGambar();">
+                    <option id="g1" value="1">adit</option>
+                    <option id="g2" value="2">jauh</option>
+                    <option id="g3" value="3">motor</option>
+                    <option id="g4" value="4">pantai</option>
+                    <option id="g5" value="5">vespa</option>
+                    <option id="g6" value="6">bunga ravlesia</option>
+                </select>
+            </div>
+            <div class="change-img" style="margin-top: 40px;">
+                <img id="imgDefault" src="img/adit.jpeg" style="width: 200px;">
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function gantiGambar() {
+            var getSelect = document.getElementById('select_img').value;
+
+            var g1 = document.getElementById('g1').value;
+            var g2 = document.getElementById('g2').value;
+            var g3 = document.getElementById('g3').value;
+            var g4 = document.getElementById('g4').value;
+            var g5 = document.getElementById('g5').value;
+            var g6 = document.getElementById('g6').value;
+
+            var imgDefault = document.getElementById('imgDefault');
+
+            if (getSelect == g2) {
+                imgDefault.src = 'img/jauh.jpeg';
+                alert('this is tree(1) image');
+            }
+            else if (getSelect == g3) {
+                imgDefault.src = 'img/motor.jpeg';
+                alert('this is mountain image');
+            }
+            else if (getSelect == g4) {
+                imgDefault.src = 'img/pantai.jpeg';
+                alert('this is river image');
+            }
+            else if (getSelect == g5) {
+                imgDefault.src = 'img/vespa.jpeg';
+                alert('this is waterfall image');
+            } else if (getSelect == g6) {
+                imgDefault.src = 'img/bunga ravlesia.jpg';
+                alert('this is island image');
+            } else {
+                imgDefault.src = 'img/adit.jpeg';
+                alert('this is flower image');
+            }
+        }
+    </script>
+
+</body>
+
+</html>
